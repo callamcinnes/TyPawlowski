@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Archivo" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <meta charset="utf-8" />
     <title>Ty Pawlowski</title>
-    
     <script>
-      
       var colour="chartreuse"; // "random" can be replaced with any valid colour ie: "red"...
-      var sparkles=100;// increase of decrease for number of sparkles falling
-      
+      var sparkles=100; // increase of decrease for number of sparkles falling
       var x=ox=400;
       var y=oy=300;
       var swide=800;
@@ -25,10 +20,8 @@
       var tinyx=new Array();
       var tinyy=new Array();
       var tinyv=new Array();
-      
       colours=new Array('#ff0000','#00ff00','#ffffff','#ff00ff','#ffa500','#ffff00','#00ff00','#ffffff','ff00ff')
-        
-        n = 10;
+      n = 10;
       y = 0;
       x = 0;
       n6=(document.getElementById&&!document.all);
@@ -38,65 +31,44 @@
       a=(ns||n6)?'':'all.';
       n6r=(n6)?'")':'';
       s=(ns)?'':'.style';
-      
       if (ns){
         for (i = 0; i < n; i++)
           document.write('<layer name="dots'+i+'" top=0 left=0 width='+i/2+' height='+i/2+' bgcolor=#ff0000></layer>');
       }
-      
       if (ie)
       document.write('<div id="con" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
-      
       if (ie||n6){
       for (i = 0; i < n; i++)
       document.write('<div id="dots'+i+'" style="position:absolute;top:0px;left:0px;width:'+i/2+'px;height:'+i/2+'px;background:#ff0000;font-size:'+i/2+'"></div>');
       }
-      
       if (ie)
       document.write('</div></div>');
       (ns||n6)?window.captureEvents(Event.MOUSEMOVE):0;
-      
       function Mouse(evnt){
-      
       y = (ns||n6)?evnt.pageY+4 - window.pageYOffset:event.y+4;
       x = (ns||n6)?evnt.pageX+1:event.x+1;
       }
-      
       (ns)?window.onMouseMove=Mouse:document.onmousemove=Mouse;
-      
       function animate(){
-      
       o=(ns||n6)?window.pageYOffset:0;
-      
       if (ie)con.style.top=document.body.scrollTop + 'px';
-      
       for (i = 0; i < n; i++){
-      
       var temp1 = eval(d+a+"dots"+i+n6r+s);
-      
       randcolours = colours[Math.floor(Math.random()*colours.length)];
-      
       (ns)?temp1.bgColor = randcolours:temp1.background = randcolours; 
-      
       if (i < n-1){
-      
       var temp2 = eval(d+a+"dots"+(i+1)+n6r+s);
       temp1.top = parseInt(temp2.top) + 'px';
       temp1.left = parseInt(temp2.left) + 'px';
-      
       } 
       else{
-      
       temp1.top = y+o + 'px';
       temp1.left = x + 'px';
       }
       }
-      
       setTimeout("animate()",10);
       }
-      
       animate();
-      
       window.onload=function() { if (document.getElementById) {
       var i, rats, rlef, rdow;
       for (var i=0; i<sparkles; i++) {
@@ -123,7 +95,6 @@
       set_width();
       sparkle();
       }}
-      
       function sparkle() {
       var c;
       if (Math.abs(x-ox)>1 || Math.abs(y-oy)>1) {
@@ -145,7 +116,6 @@
       }
       setTimeout("sparkle()", 40);
       }
-      
       function update_star(i) {
       if (--starv[i]==25) star[i].style.clip="rect(1px, 4px, 4px, 1px)";
       if (starv[i]) {
@@ -172,7 +142,6 @@
       tiny[i].style.visibility="visible"
       }
       }
-      
       function update_tiny(i) {
       if (--tinyv[i]==25) {
       tiny[i].style.width="1px";
@@ -193,7 +162,6 @@
       }
       else tiny[i].style.visibility="hidden";
       }
-      
       document.onmousemove=mouse;
       function mouse(e) {
       if (e) {
@@ -206,7 +174,6 @@
       x=event.x+sleft;
       }
       }
-      
       window.onscroll=set_scroll;
       function set_scroll() {
       if (typeof(self.pageYOffset)=='number') {
@@ -226,7 +193,6 @@
       sleft=0;
       }
       }
-      
       window.onresize=set_width;
       function set_width() {
       var sw_min=999999;
@@ -250,7 +216,6 @@
       swide=sw_min;
       shigh=sh_min;
       }
-      
       function createDiv(height, width) {
       var div=document.createElement("div");
       div.style.position="absolute";
@@ -259,7 +224,6 @@
       div.style.overflow="hidden";
       return (div);
       }
-      
       function newColour() {
       var c=new Array();
       c[0]=255;
@@ -269,13 +233,11 @@
       return ("rgb("+c[0]+", "+c[1]+", "+c[2]+")");
       }
       // ]]>
-      
       </script>
       <style>
-        
         body {
           background-color: #c2b6b6;
-          cursor: crosshair;
+          cursor: pointer;
           line-height: 1.5em;
         }
         .hea {
@@ -290,12 +252,10 @@
         .work{
           font-family: Helvetica;
         }
-        
         #content {
           position: fixed;
           z-index: 100;
         }
-        
         .blue {
           height: 700px;
           width: 100px;
@@ -309,19 +269,15 @@
           font-size: 11pt;
           color: black;
         }
-        
         a:hover {
-  color: blue;
-}
+        color: blue;
+        }
         a:active {
           color: chartreuse;
         }
-        
-        
       </style>
       </head>
       <body>
-        
         <div id="content" body style="margin: 0px;">
           <div class="hea"><span style="cursor:crosshair"><i>Ty Pawlowski</i></span></div>
           <div class="about"> <a href="about.html"><span style="cursor:crosshair">About </span></a></div>
@@ -331,13 +287,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Sparkle Trail and Dust Cursor</title>
         <meta name="description" content="Your Description Here">
-        
-        
         <script type="text/javascript" src="js/jquery.1.11.1.js"></script>
-        
-        
-        
-        
       </body>
       </html>
       
