@@ -323,9 +323,9 @@
       <body>
         
         <div id="content" body style="margin: 0px;">
-          <div class="hea"><i>Ty Pawlowski</i></div>
-          <div class="about"> <a href="about.html">About </a></div>
-          <div class="work"> <a href="work.html">Work </a></div>
+          <div class="hea"><span style="cursor:crosshair"><i>Ty Pawlowski</i></span></div>
+          <div class="about"> <a href="about.html"><span style="cursor:crosshair">About </span></a></div>
+          <div class="work"> <a href="work.html"><span style="cursor:crosshair">Work </span></a></div>
         </div>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
