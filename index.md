@@ -275,7 +275,7 @@
         
         body {
           background-color: #c2b6b6;
-          cursor: url("cursor.png"), pointer;
+          cursor: crosshair;
           line-height: 1.5em;
         }
         .hea {
